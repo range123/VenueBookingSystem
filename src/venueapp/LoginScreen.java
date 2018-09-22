@@ -17,7 +17,7 @@ public class LoginScreen extends JFrame {
 	private JPasswordField pass;
 	private JFrame jf = this;
 	ArrayList<User> u = new ArrayList<>(); 
-	
+
 	public LoginScreen()
 	{
 		super("Venue Booking System");
@@ -28,14 +28,86 @@ public class LoginScreen extends JFrame {
 		this.add(unamepass);
 		unamepass.setLayout(new BoxLayout(unamepass,BoxLayout.Y_AXIS));
 		uname = new JTextField(20);
+		uname.setText("Username");
+		uname.addMouseListener(new MouseListener(){
+
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				if(uname.getText().equals("Username"))
+					uname.setText("");
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent arg0) {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void mouseExited(MouseEvent arg0) {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void mousePressed(MouseEvent arg0) {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void mouseReleased(MouseEvent arg0) {
+				// TODO Auto-generated method stub
+
+			}
+
+		});
 		pass = new JPasswordField(20);
+		pass.setText("password");
+		pass.addMouseListener(new MouseListener(){
+
+			@SuppressWarnings("deprecation")
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				if(pass.getText().equals("password"))
+					pass.setText("");
+
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent arg0) {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void mouseExited(MouseEvent arg0) {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void mousePressed(MouseEvent arg0) {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void mouseReleased(MouseEvent arg0) {
+				// TODO Auto-generated method stub
+
+			}
+
+
+
+		});
 		unamepass.add(uname);
 		unamepass.add(pass);
 		JPanel buttonpanel = new JPanel();
 		buttonpanel.setLayout(new GridLayout());
 		unamepass.add(buttonpanel);
 		JButton login = new JButton("Login");
-		
+
 		login.addActionListener(new ActionListener(){
 
 			@SuppressWarnings("deprecation")
@@ -50,11 +122,11 @@ public class LoginScreen extends JFrame {
 					oi = new ObjectInputStream(fi);
 					//oi = new CustomInputStream(fi);
 					User obj = null;
-					
+
 					Object o;
 					while((o = oi.readObject())!=null)
 					{
-							obj = (User)o;
+						obj = (User)o;
 						if(obj.getUname().equals(uname.getText()) && obj.getPassword().equals(pass.getText())){
 							y=0;
 							JOptionPane.showMessageDialog(jf, "Logged In");
@@ -82,27 +154,27 @@ public class LoginScreen extends JFrame {
 					JOptionPane.showMessageDialog(jf, "IO");
 					e.printStackTrace();
 				}
-				
+
 			}
-			
+
 		});
-		
+
 		JButton register = new JButton("Register");
-		
+
 		register.addActionListener(new ActionListener(){
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				jf.setVisible(false);
 				new RegisterScreen();
-				
+
 			}
-			
+
 		});
 		buttonpanel.add(login);
 		buttonpanel.add(register);
 		setVisible(true);
-		
+
 	}
 
 }
