@@ -291,17 +291,25 @@ public class RegisterScreen extends JFrame {
 						JOptionPane.showMessageDialog(jf, "Username already Exists");
 					else
 					{
-						User u = new User(uname.getText(),pass.getText(),email.getText(),phone.getText().replaceAll(",",""),address.getText(),!isseller.isSelected());
-						FileOutputStream fo = new FileOutputStream("C:\\Users\\Jayaraman\\workspace\\Venue_Booking_System\\src\\venueapp\\files\\Users\\"+uname.getText()+".ser");
-						//CustomOutputStream oo = new CustomOutputStream(fo);
-						ObjectOutputStream oo = new ObjectOutputStream(fo);
-						oo.writeObject(u);
-						oo.flush();
-						oo.close();
-						fo.close();
-						setVisible(false);
-						new LoginScreen();
-						//System.out.println(new File("C:\\Users\\Jayaraman\\workspace\\Venue_Booking_System\\src\\venueapp\\files\\login.ser").length());
+						if(!pass.getText().equals(confirmpass.getText()))
+						{
+							JOptionPane.showMessageDialog(jf, "Both Passwords Don't Match");
+
+						}
+						else
+						{
+							User u = new User(uname.getText(),pass.getText(),email.getText(),phone.getText().replaceAll(",",""),address.getText(),!isseller.isSelected());
+							FileOutputStream fo = new FileOutputStream("C:\\Users\\Jayaraman\\workspace\\Venue_Booking_System\\src\\venueapp\\files\\Users\\"+uname.getText()+".ser");
+							//CustomOutputStream oo = new CustomOutputStream(fo);
+							ObjectOutputStream oo = new ObjectOutputStream(fo);
+							oo.writeObject(u);
+							oo.flush();
+							oo.close();
+							fo.close();
+							setVisible(false);
+							new LoginScreen();
+							//System.out.println(new File("C:\\Users\\Jayaraman\\workspace\\Venue_Booking_System\\src\\venueapp\\files\\login.ser").length());
+						}
 					}
 				}
 				catch(IOException e)
