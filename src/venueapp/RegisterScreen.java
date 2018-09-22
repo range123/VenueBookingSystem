@@ -19,6 +19,7 @@ public class RegisterScreen extends JFrame {
 	private JTextArea address;
 	private JButton register;
 	private JCheckBox isseller;
+	private JFrame jf = this;
 	public RegisterScreen()
 	{
 		super("Venue Booking System");
@@ -35,35 +36,35 @@ public class RegisterScreen extends JFrame {
 			public void mouseClicked(MouseEvent arg0) {
 				if(uname.getText().equals("Username"))
 					uname.setText("");
-				
+
 			}
 
 			@Override
 			public void mouseEntered(MouseEvent arg0) {
 				// TODO Auto-generated method stub
-				
+
 			}
 
 			@Override
 			public void mouseExited(MouseEvent arg0) {
 				// TODO Auto-generated method stub
-				
+
 			}
 
 			@Override
 			public void mousePressed(MouseEvent arg0) {
 				// TODO Auto-generated method stub
-				
+
 			}
 
 			@Override
 			public void mouseReleased(MouseEvent arg0) {
 				// TODO Auto-generated method stub
-				
+
 			}
 
 
-			
+
 		});
 		email = new JTextField(20);
 		email.setText("E-mail");
@@ -73,111 +74,113 @@ public class RegisterScreen extends JFrame {
 			public void mouseClicked(MouseEvent arg0) {
 				if(email.getText().equals("E-mail"))
 					email.setText("");
-				
+
 			}
 
 			@Override
 			public void mouseEntered(MouseEvent arg0) {
 				// TODO Auto-generated method stub
-				
+
 			}
 
 			@Override
 			public void mouseExited(MouseEvent arg0) {
 				// TODO Auto-generated method stub
-				
+
 			}
 
 			@Override
 			public void mousePressed(MouseEvent arg0) {
 				// TODO Auto-generated method stub
-				
+
 			}
 
 			@Override
 			public void mouseReleased(MouseEvent arg0) {
 				// TODO Auto-generated method stub
-				
+
 			}
 
 
-			
+
 		});
 		pass = new JPasswordField(20);
 		pass.setText("password");
 		pass.addMouseListener(new MouseListener(){
 
+			@SuppressWarnings("deprecation")
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
 				if(pass.getText().equals("password"))
 					pass.setText("");
-				
+
 			}
 
 			@Override
 			public void mouseEntered(MouseEvent arg0) {
 				// TODO Auto-generated method stub
-				
+
 			}
 
 			@Override
 			public void mouseExited(MouseEvent arg0) {
 				// TODO Auto-generated method stub
-				
+
 			}
 
 			@Override
 			public void mousePressed(MouseEvent arg0) {
 				// TODO Auto-generated method stub
-				
+
 			}
 
 			@Override
 			public void mouseReleased(MouseEvent arg0) {
 				// TODO Auto-generated method stub
-				
+
 			}
 
 
-			
+
 		});
 		confirmpass = new JPasswordField(20);
 		confirmpass.setText("password");
 		confirmpass.addMouseListener(new MouseListener(){
 
+			@SuppressWarnings("deprecation")
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
 				if(confirmpass.getText().equals("password"))
 					confirmpass.setText("");
-				
+
 			}
 
 			@Override
 			public void mouseEntered(MouseEvent arg0) {
 				// TODO Auto-generated method stub
-				
+
 			}
 
 			@Override
 			public void mouseExited(MouseEvent arg0) {
 				// TODO Auto-generated method stub
-				
+
 			}
 
 			@Override
 			public void mousePressed(MouseEvent arg0) {
 				// TODO Auto-generated method stub
-				
+
 			}
 
 			@Override
 			public void mouseReleased(MouseEvent arg0) {
 				// TODO Auto-generated method stub
-				
+
 			}
 
 
-			
+
 		});
 		phone = new JFormattedTextField(NumberFormat.getInstance());
 		phone.setText("Phone");
@@ -187,35 +190,35 @@ public class RegisterScreen extends JFrame {
 			public void mouseClicked(MouseEvent arg0) {
 				if(phone.getText().equals("Phone"))
 					phone.setText("");
-				
+
 			}
 
 			@Override
 			public void mouseEntered(MouseEvent arg0) {
 				// TODO Auto-generated method stub
-				
+
 			}
 
 			@Override
 			public void mouseExited(MouseEvent arg0) {
 				// TODO Auto-generated method stub
-				
+
 			}
 
 			@Override
 			public void mousePressed(MouseEvent arg0) {
 				// TODO Auto-generated method stub
-				
+
 			}
 
 			@Override
 			public void mouseReleased(MouseEvent arg0) {
 				// TODO Auto-generated method stub
-				
+
 			}
 
 
-			
+
 		});
 		address = new JTextArea();
 		address.setText("Address");
@@ -225,35 +228,35 @@ public class RegisterScreen extends JFrame {
 			public void mouseClicked(MouseEvent arg0) {
 				if(address.getText().equals("Address"))
 					address.setText("");
-				
+
 			}
 
 			@Override
 			public void mouseEntered(MouseEvent arg0) {
 				// TODO Auto-generated method stub
-				
+
 			}
 
 			@Override
 			public void mouseExited(MouseEvent arg0) {
 				// TODO Auto-generated method stub
-				
+
 			}
 
 			@Override
 			public void mousePressed(MouseEvent arg0) {
 				// TODO Auto-generated method stub
-				
+
 			}
 
 			@Override
 			public void mouseReleased(MouseEvent arg0) {
 				// TODO Auto-generated method stub
-				
+
 			}
 
 
-			
+
 		});
 		isseller = new JCheckBox();
 		JLabel jl = new JLabel("Are you a Seller? ");
@@ -269,31 +272,45 @@ public class RegisterScreen extends JFrame {
 		textpanel.add(phone);
 		textpanel.add(address);
 		textpanel.add(check);
-		
+
 		JPanel buttonpanel = new JPanel();
 		buttonpanel.setLayout(new BoxLayout(buttonpanel,BoxLayout.X_AXIS));
 		register = new JButton("Register");
-		
+
 		register.addActionListener(new ActionListener(){
 
+			@SuppressWarnings("deprecation")
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				try{
-				User u = new User(uname.getText(),pass.getText(),email.getText(),phone.getText().replaceAll(",",""),address.getText(),!isseller.isSelected());
-				FileOutputStream fo = new FileOutputStream("C:\\Users\\Jayaraman\\workspace\\Venue_Booking_System\\src\\venueapp\\files\\login.ser");
-				CustomOutputStream oo = new CustomOutputStream(fo);
-				oo.writeObject(u);
-				oo.flush();
-				oo.close();
-				fo.close();
-				System.out.println(new File("C:\\Users\\Jayaraman\\workspace\\Venue_Booking_System\\src\\venueapp\\files\\login.ser").length());
+					/*TODO check for unique username
+					 * 
+					 */
+					File f =new File("C:\\Users\\Jayaraman\\workspace\\Venue_Booking_System\\src\\venueapp\\files\\Users\\"+uname.getText()+".ser");
+					if(f.exists())
+						JOptionPane.showMessageDialog(jf, "Username already Exists");
+					else
+					{
+						User u = new User(uname.getText(),pass.getText(),email.getText(),phone.getText().replaceAll(",",""),address.getText(),!isseller.isSelected());
+						FileOutputStream fo = new FileOutputStream("C:\\Users\\Jayaraman\\workspace\\Venue_Booking_System\\src\\venueapp\\files\\Users\\"+uname.getText()+".ser");
+						//CustomOutputStream oo = new CustomOutputStream(fo);
+						ObjectOutputStream oo = new ObjectOutputStream(fo);
+						oo.writeObject(u);
+						oo.flush();
+						oo.close();
+						fo.close();
+						setVisible(false);
+						new LoginScreen();
+						//System.out.println(new File("C:\\Users\\Jayaraman\\workspace\\Venue_Booking_System\\src\\venueapp\\files\\login.ser").length());
+					}
 				}
 				catch(IOException e)
 				{
 					e.printStackTrace();
 				}
 			}
-			
+
+
 		});
 		buttonpanel.add(register);
 		textpanel.add(buttonpanel);
