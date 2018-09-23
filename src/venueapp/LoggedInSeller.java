@@ -12,8 +12,8 @@ import javax.swing.*;
 
 @SuppressWarnings("serial")
 public class LoggedInSeller extends JFrame{
-	User user;
-	JFrame jf = this;
+	private User user;
+	private JFrame jf = this;
 	LoggedInSeller(User u)
 	{
 		setSize(400,450);
@@ -37,6 +37,27 @@ public class LoggedInSeller extends JFrame{
 
 			}
 
+		});
+		viewprev.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				setVisible(false);
+				new YourVenuesScreen(user);
+				
+			}
+			
+		});
+		
+		book.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				setVisible(false);
+				new AddVenueScreen(user);
+				
+			}
+			
 		});
 
 		//logout.setHorizontalAlignment(JButton.EAST);

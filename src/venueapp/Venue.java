@@ -52,6 +52,10 @@ public class Venue {
 	public void setCostperhour(int costperhour) {
 		this.costperhour = costperhour;
 	}
+	@Override
+	public String toString() {
+		return sname+"&"+sphn+"&"+vname+"&"+location+"&"+pictureURL+"&"+costperhour;
+	}
 
 	
 	
