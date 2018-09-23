@@ -291,11 +291,10 @@ public class RegisterScreen extends JFrame {
 						JOptionPane.showMessageDialog(jf, "Username already Exists");
 					else
 					{
-						if(!pass.getText().equals(confirmpass.getText()))
-						{
+						if(!check())
+							JOptionPane.showMessageDialog(jf, "Fill All the fields");
+						else if(!pass.getText().equals(confirmpass.getText()))
 							JOptionPane.showMessageDialog(jf, "Both Passwords Don't Match");
-
-						}
 						else
 						{
 							User u = new User(uname.getText(),pass.getText(),email.getText(),phone.getText().replaceAll(",",""),address.getText(),!isseller.isSelected());
@@ -324,6 +323,22 @@ public class RegisterScreen extends JFrame {
 		textpanel.add(buttonpanel);
 		add(textpanel);
 		setVisible(true);
+	}
+
+	@SuppressWarnings("deprecation")
+	public boolean check()
+	{
+		if(uname.getText().equals("Username") || uname.getText().equals(""))
+			return false;
+		else if(pass.getText().equals("password") || pass.getText().equals(""))
+			return false;
+		else if(email.getText().equals("E-mail") || email.getText().equals(""))
+			return false;
+		else if(phone.getText().equals(""))
+			return false;
+		else if(address.getText().equals("Address") || address.getText().equals(""))
+			return false;
+		return true;
 	}
 
 }
