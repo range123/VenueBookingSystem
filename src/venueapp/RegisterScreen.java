@@ -305,6 +305,7 @@ public class RegisterScreen extends JFrame {
 							oo.flush();
 							oo.close();
 							fo.close();
+							JOptionPane.showMessageDialog(jf, "Registered Successfully");
 							setVisible(false);
 							new LoginScreen();
 							//System.out.println(new File("C:\\Users\\Jayaraman\\workspace\\Venue_Booking_System\\src\\venueapp\\files\\login.ser").length());

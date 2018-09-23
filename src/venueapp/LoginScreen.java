@@ -23,7 +23,7 @@ public class LoginScreen extends JFrame {
 		super("Venue Booking System");
 		setSize(500,160);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setLocation(750,300);
+		setLocation(750,350);
 		JPanel unamepass = new JPanel();
 		this.add(unamepass);
 		unamepass.setLayout(new BoxLayout(unamepass,BoxLayout.Y_AXIS));
@@ -130,6 +130,11 @@ public class LoginScreen extends JFrame {
 						if(obj.getUname().equals(uname.getText()) && obj.getPassword().equals(pass.getText())){
 							y=0;
 							JOptionPane.showMessageDialog(jf, "Logged In");
+							if(obj.isIscustomer())
+								new LoggedinScreen(obj);
+							else
+								new LoggedInSeller(obj);
+							setVisible(false);
 						}
 					}
 					if(y==1)
