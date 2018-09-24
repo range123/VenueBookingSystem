@@ -1,3 +1,3 @@
-kiki&5646&mooki&mook mook&Photo Url&222
-kiki&5646&hiure&buri&Photo Url&33
-tester&9876543210&test place&test adress&Photo Url&8888
+kiki&5646&Kailash Marriage Hall&Marriage Hall&perungudi,chennai&C:/Users/Jayaraman/workspace/Venue_Booking_System/src/venueapp/SplashScreenImage.png&50000&It is a very awesome marriage hall at an affordable price&500&3
+kiki&5646&Udhayam Marriage Hall&Marriage Hall&africa&C:\\Users\\Jayaraman\\workspace\\Venue_Booking_System\\src\\venueapp\\images\\romantic-historic-nj-wedding-venue-with-skylight-stage.jpg&100000&it's the best marriage hall with 2500sqft&50000&10
+kiki&5646&chennai&test&sdfsdzfsdfsdf&C:/Users/Jayaraman/workspace/Venue_Booking_System/src/venueapp/SplashScreenImage.png&2000000&fgdfgbdfg&40000&100
