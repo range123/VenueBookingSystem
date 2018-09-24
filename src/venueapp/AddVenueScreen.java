@@ -40,7 +40,7 @@ public class AddVenueScreen extends JFrame {
 		photo = new JTextField(20);
 		photo.setText("Photo Url");
 		cost = new JFormattedTextField(NumberFormat.getNumberInstance());
-		cost.setText("Cost per Hour");
+		cost.setText("Cost per Day");
 		desc = new JTextField(20);
 		desc.setText("Description");
 		capacity = new JFormattedTextField(NumberFormat.getIntegerInstance());

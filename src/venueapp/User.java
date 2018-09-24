@@ -36,7 +36,7 @@ public class User implements Serializable {
 	@Override
 	public String toString() {
 		
-		return uname+" : "+password;
+		return uname+"*";
 	}
 	public String getPhone() {
 		return phone;
