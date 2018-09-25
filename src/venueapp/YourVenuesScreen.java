@@ -35,8 +35,6 @@ public class YourVenuesScreen extends JFrame {
 		name.setHorizontalAlignment(JLabel.CENTER);
 		loc.setText("Address");
 		loc.setHorizontalAlignment(JLabel.CENTER);
-		//pan.add(name);
-		//pan.add(loc);
 		try{
 			venues = new ArrayList<>();
 			this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -56,7 +54,7 @@ public class YourVenuesScreen extends JFrame {
 					JPanel p =new JPanel();
 					p.setSize(280,100);
 
-					JLabel vnamelabel = new JLabel(s[2]);
+					JLabel vnamelabel = new JLabel(s[2].toUpperCase());
 					JLabel vtypelabel = new JLabel(s[3]);
 					vnamelabel.setHorizontalAlignment(JLabel.CENTER);
 					vtypelabel.setHorizontalAlignment(JLabel.CENTER);
@@ -117,11 +115,11 @@ public class YourVenuesScreen extends JFrame {
 
 			@Override
 			public void valueChanged(ListSelectionEvent arg0) {
-				if(list.getSelectedIndex()!=-1)
-					JOptionPane.showMessageDialog(jf, "Selected");
-				
+				if(list.getSelectedIndex()!=-1){}
+				//JOptionPane.showMessageDialog(jf, "Selected");
+
 			}
-			
+
 		});
 
 		list.setCellRenderer(new PanelRenderer());

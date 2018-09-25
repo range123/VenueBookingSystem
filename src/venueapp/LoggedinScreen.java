@@ -28,6 +28,17 @@ public class LoggedinScreen extends JFrame{
 		//book.setHorizontalAlignment(JButton.CENTER);
 		JButton logout = new JButton("Logout");
 		
+		viewprev.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				setVisible(false);
+				new PreviousBookingScreen(user);
+				
+			}
+			
+		});
+		
 		book.addActionListener(new ActionListener(){
 
 			@Override
