@@ -38,7 +38,7 @@ public class VenueIndividualScreen extends JFrame{
 		setSize(600,600);
 		setLocation(750,200);
 		
-		vname = new JLabel(venue.getVname());
+		vname = new JLabel(venue.getVname().toUpperCase());
 		vname.setFont(new Font("Venue Name : "+venue.getVname(),Font.ROMAN_BASELINE,32));
 		vname.setHorizontalAlignment(JLabel.CENTER);
 		imagelabel = new JLabel();
